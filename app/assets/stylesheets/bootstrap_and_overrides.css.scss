@@ -1,0 +1,18 @@
+/* Standard way of importing stuff does not work if they are on differen drive letters... */
+//@import "bootstrap";
+body { padding-top: 60px; }
+//@import "bootstrap-responsive";
+
+table.table {
+  td, th {
+    text-align: center;
+  }
+}
+
+.lead:last-child {
+  margin-bottom: 0;
+}
+
+.lead li {
+  line-height: 30px;
+}

@@ -1,0 +1,28 @@
+<h1>My Answers</h1>
+
+<table id='answers' class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th class='question'>Question</th>
+      <th class='originator'>Originator</th>
+      <th class='my-answer'>My Answer</th>
+      <th class='status'>Status</th>
+      <th class='asked-at'>Asked At</th>
+      <th class='actions'></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @answers.each do |answer| %>
+    <% question = answer.question -%>
+    <tr>
+      <td class='question'><%= link_to question.text, question %></td>
+      <td class='asked-by'><%= question.user == current_user ? 'You' : question.user.name %></td>
+      <td class='answer'><%= answer.text %></td>
+      <td class='status'><%= formatted_status(question) %></td>
+      <td class='asked-at'><small><%= time_ago_in_words(question.created_at) %> ago</small></td>
+      <td class='actions'><%= link_to 'Details', question %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

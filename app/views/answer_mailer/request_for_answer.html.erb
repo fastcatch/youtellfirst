@@ -1,0 +1,21 @@
+<h1>Answer this!</h1>
+
+<p>
+  <%= @asked_by.name %> asked the following question via <%= link_to "YouTellFirst", root_url -%>:
+</p>
+<p><b><%= @question.text %></b></p>
+<p>
+  We already have answer(s). Now it's your turn to answer the question; you can do it by clicking <%= link_to 'here', edit_answer_url(@answer.uuid) -%> (or by copy-pasting <%= edit_answer_url(@answer.uuid) -%> into your browser's address bar).  If you already have a YouTellFirst account you can also <%= link_to 'log in', new_user_session_url -%> and answer the question there.
+</p>
+<p>
+  As soon as every invitee answer the question we will send you all answers.
+</p>
+<p>
+  Show them that you know better! Click <%= link_to 'here', edit_answer_url(@answer.uuid) -%> and go ahead.
+</p>
+<p>
+  Cheers!
+</p>
+<p>
+  YouTellFirst crew
+</p>

@@ -1,0 +1,8 @@
+<div class="page-header">
+  <p>
+    <strong><%= @question.user.name -%></strong> asked this <%= time_ago_in_words(@question.created_at) %> ago:
+  </p>
+  <h1><%= @question.text %></h1>
+</div>
+
+<%= render 'form' %>

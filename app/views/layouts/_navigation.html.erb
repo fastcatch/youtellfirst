@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <nav class="navbar-inner">
+    <div class="container">
+      <%= link_to "You Tell First", home_path, class: 'brand' -%>
+      <div class="nav-collapse">
+        <% if current_user.present? -%>
+          <ul class="nav">
+            <li><%= link_to "New Question", new_question_path %></li>
+            <li><%= link_to "My Questions", questions_path %></li>
+            <li><%= link_to "My Answers", answers_path %></li>
+          </ul>
+        <% end -%>
+        <div class='pull-right'>
+          <% if current_user.present? -%>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn" %>
+          <% else -%>
+            <%= link_to 'Sign in', new_user_session_path, class: "btn btn-success" %>
+            <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary"%>
+          <% end -%>
+        </div>
+        <div class='pull-right' style='margin-right: 14px;'>
+          <% if current_user.present? -%>
+            <p class='navbar-text' style='display: inline-block'><%= current_user.email %></p>
+          <% end -%>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,18 @@
+<%= simple_form_for @question, html: { class: 'form-horizontal' } do |f| %>
+  <legend>Question</legend>
+  <%= f.input :text,  as: :string, label: 'Question', input_html: { class: 'span6' } %>
+  <%= f.simple_fields_for :answers, @question.answers.first, child_index: 0 do |answer_f| %>
+    <%= answer_f.input :email, as: :hidden, input_html: { class: 'span6', value: current_user.email } %>
+    <%= answer_f.input :text, as: :string, label: 'Your answer', input_html: { class: 'span6' }, required: true %>
+  <% end %>
+
+  <div class='nested-item-block'>
+    <legend>Invitations <%= link_to_add_nested_item 'Add', f, :answers, "questions/invitation_fields" %></legend>
+    <p>At least one invitee is required.  You're not betting alone, are you?</p>
+    <%= f.simple_fields_for :answers, @question.answers.second || @question.answers.new, child_index: 1 do |answer_f| %>
+      <%= render "questions/invitation_fields", f: answer_f %>
+    <% end %>
+  </div>
+
+  <%= f.button :submit %>
+<% end %>

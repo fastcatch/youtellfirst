@@ -1,0 +1,25 @@
+<h1>We've got all the answers!</h1>
+
+<p>
+  <%= @asked_by.name %> asked the following question via <%= link_to "YouTellFirst", root_url -%>:
+</p>
+<p><b><%= @question.text %></b></p>
+<p>
+  We have received the answers from all invitees.  Here they go:
+</p>
+<ul>
+  <% @question.answers.order(:updated_at).each do |answer| %>
+    <li>
+      <i><%= answer.user.present? ? answer.user.name : answer.email -%></i>: <%= answer.text -%>
+    </li>
+  <% end -%>
+</ul>
+<p>
+  Who has the best one?  You can only tell.  (I'm just a machine or whatnot... :))
+</p>
+<p>
+  Cheers!
+</p>
+<p>
+  YouTellFirst
+</p>

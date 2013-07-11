@@ -1,0 +1,5 @@
+<% if @question.pending? -%>
+  <%= render partial: 'answers/own_answer' %>
+<% else -%>
+  <%= render partial: 'questions/details' %>
+<% end -%>

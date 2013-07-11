@@ -1,0 +1,5 @@
+<%= simple_form_for @answer, url: answer_url(id: @answer.uuid), html: { class: 'form-horizontal', id: 'answer' } do |f| %>
+  <%= f.input :text, as: :string, label: 'Your answer', input_html: { class: 'span6' }, required: true, hint: "Make sure you get it right the first time around for <b>you cannot change</b> your answer once saved!" %>
+
+  <%= f.button :submit, "Save" %>
+<% end %>

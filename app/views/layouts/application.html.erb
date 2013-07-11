@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "You Tell First" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "You Tell First" %>">
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+
+    <%= render partial: 'layouts/navigation' %>
+
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+          <div class="row">
+            <div class="span8 offset2">
+              <%= render partial: 'layouts/messages' %>
+            </div>
+          </div>
+          <%= yield %>
+          <footer>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+
+  </body>
+</html>

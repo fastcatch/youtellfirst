@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  speech_info:
+    info_start: Click on the microphone icon to fill the input by speaking.
+    info_speak_now: Speak now. Click here to stop.
+    info_start: Click on the microphone icon to fill the input by speaking.
+    info_speak_now: Speak now. Click here to stop.
+    info_no_speech:  No speech was detected. You may need to adjust your <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">microphone settings</a>.
+    info_no_microphone: No microphone was found. Ensure that a microphone is installed and that <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">microphone settings</a> are configured correctly.
+    info_allow: Click the "Allow" button above to enable your microphone.
+    info_denied: Permission to use microphone was denied.
+    info_blocked: Permission to use microphone is blocked. To change, go to chrome://settings/contentExceptions#media-stream
+    info_upgrade: Web Speech API is not supported by this browser. Upgrade to <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
